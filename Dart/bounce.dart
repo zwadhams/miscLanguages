@@ -4,8 +4,8 @@ import 'dart:html';
 import 'dart:math';
 import 'dart:async';
 
-CanvasElement canvas = CanvasElement();
-CanvasRenderingContext2D ctx;
+CanvasElement canvas = CanvasElement(); //was having trouble getting these to compile under any curcumstance. 
+CanvasRenderingContext2D ctx; //Think it might have been something with dartpad
 
 
 var ball;
@@ -39,15 +39,15 @@ void drawBall(){//constucts the ball
   ball.x = ball.x + ball.vx;//velocity on right
   ball.y = ball.y + ball.vy;//velocity on left
   
-  ball.vx = ball.vx * .996;//drag/friction to right of screen
-  ball.vy = ball.vy * .996;//drag/friction to bottom of screen
+  ball.vx = ball.vx * .996;//to right of screen
+  ball.vy = ball.vy * .996;//to bottom of screen
   
   ball.vx = ball.vx + .07; //gravity to right of screen
   ball.vy = ball.vy + .07; //gravity to bottom of screen
   
   ctx.save();
   ctx.translate(ball.x, ball.y);
-  ctx.fillStyle = "lime"; //ball color
+  ctx.fillStyle = "red"; //ball color
   ctx.beginPath();
   ctx.arc(0, 0, ball.r, 0, pi*2, false);
   ctx.closePath();
@@ -79,8 +79,8 @@ Timer timeWait([int milliseconds]) {
 
 void main(){
   ball = new Ball();
-  canvas = querySelector('#canvas');
-  ctx = canvas.getContext('2d');
-  drawBall();
-  ctx.canvas.onClick.listen(resetOnClick);
+  canvas = querySelector('#canvas'); //creates canvas
+  ctx = canvas.getContext('2d'); //makes it 2d
+  drawBall(); //calls the function that creates the ball
+  ctx.canvas.onClick.listen(resetOnClick); //listens for my click to reset it
 }
