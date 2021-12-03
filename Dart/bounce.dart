@@ -1,4 +1,3 @@
-//IN PROGRESS
 
 import 'dart:html';
 import 'dart:math';
