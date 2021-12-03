@@ -70,7 +70,7 @@ void drawBall(){//constucts the ball
   timeWait();
 }
 
-Timer timeWait([int milliseconds]) {
+Timer timeWait([int milliseconds]) { //this timer keeps the ball moving in a semi normal way
   const timeout = const Duration(milliseconds: 6);//seconds between each frame
   const ms = const Duration(milliseconds: 1);
   var duration = milliseconds == null ? timeout : ms * milliseconds;
